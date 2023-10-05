@@ -23,14 +23,35 @@ class TextToMorse:
 
         print("""Welcome to TextToMorse! 
 *The application supports English letters, characters and numbers.
+type -help for help""")
 
-What do you want to translate today?""")
+    def help(self):
+        print("""--------------------------------------------------------------
+What Is Morse Code?
+Morse code is a method used in telecommunication to encode text characters as standardized sequences of two different signal durations, called dots and dashes, or dits and dahs. Morse code is named after Samuel Morse, one of the inventors of the telegraph.
+--------------------------------------------------------------""")
 
-    def text_to_morse(self, input):
+    def text_to_morse(self):
+        print("You choose 1")
+        print("Type your text:")
+        user_input = input('>')
         output = ""
 
-        for char in input:
-            output += self.morse_code_dict[char] + " "
+        for char in user_input:
+            output += self.morse_code_dict[char.lower()] + " "
+
+        print(output)
+
+    def morse_to_text(self):
+        print("You choose 2")
+        print("Type your code:")
+        user_input = input('>').split(" ")
+        output = ""
+
+        for morse_code in user_input:
+            for letter, morse in self.morse_code_dict.items():
+                if morse == morse_code:
+                    output += letter
 
         print(output)
 
@@ -38,11 +59,23 @@ END = False
 text_to_morse_converter = TextToMorse()
 
 while END == False:
+    print('''--------------------------------------------------------------
+What do you want to do today?
+Pick one number(1-2):
+
+1. Translate text to morse code
+2. Translate morse code to text
+''')
     user_input = input('>')
 
-    text_to_morse_converter.text_to_morse(user_input)
+    if(user_input == '-help'):
+        text_to_morse_converter.help()
+    if(user_input == '1'):
+        text_to_morse_converter.text_to_morse()
+    elif(user_input == '2'):
+        text_to_morse_converter.morse_to_text()
 
-    print("Do you want to translate the next text?(yes/no)")
+    print("Do you want to do the next operation?(yes/no)")
     if((input('>')).lower() == "no"):
         print("Exiting TextToMorse") 
         END = True
