@@ -29,7 +29,22 @@ type -help for help""")
         print("""--------------------------------------------------------------
 What Is Morse Code?
 Morse code is a method used in telecommunication to encode text characters as standardized sequences of two different signal durations, called dots and dashes, or dits and dahs. Morse code is named after Samuel Morse, one of the inventors of the telegraph.
---------------------------------------------------------------""")
+--------------------------------------------------------------
+When Was Morse Code Invented?
+Morse code was developed in the 1830s and then improved in the 1840s by Morse's assistant, Alfred Lewis Vail.
+--------------------------------------------------------------
+What Was the First Message Sent by Morse Code?
+"What hath God wrought" was the first official message sent by Samuel F.B. Morse on May 24, 1844, to open the Baltimore-Washington telegraph line.
+--------------------------------------------------------------
+How to Learn Morse Code?
+You can learn the Morse code by studying and listening to Morse audio, as well as through word memorization techniques you can find on various websites.
+--------------------------------------------------------------
+What Does SOS Mean?
+SOS is a distress signal in International Morse code, which is globally recognized as a call for help. It was first adopted by the German government in 1905.
+
+Although some people think that SOS stands for "Save Our Souls" or "Save Our Ship", its letters do not stand for anything.
+--------------------------------------------------------------
+""")
 
     def text_to_morse(self):
         print("You choose 1")
